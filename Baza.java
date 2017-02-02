@@ -8,7 +8,7 @@
 public class Baza
 {
     private Carta[] baza;
-    private String [] nombreJugadores;
+    private String[] nombreJugadores;
     private int paloPinte;
     private int numeroDeBaza;
     /**
@@ -44,4 +44,21 @@ public class Baza
             numeroDeBaza++;
         }
     }
+    
+    /**
+     * método llamado getPaloPrimeraCartaDeLaBaza sin parámetros que 
+     * devuelva un entero que representa el palo de la primera carta 
+     * añadida a la baza o -1 en caso de que no se haya añadido aún ninguna carta
+     */
+    public int getPaloPrimeraCartaDeLaBaza(){
+        int primeraCarta = -1;
+        if(baza[0] != null){
+            primeraCarta = baza[0].getPaloCarta();
+        }
+        return primeraCarta;
+    }
+    
+    
+    
+    
 }
