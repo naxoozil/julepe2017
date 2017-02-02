@@ -25,5 +25,23 @@ public class Baza
         this.paloPinte = paloPinte;
         
     }
-
+    
+    /**
+     * método llamado addCarta que admita un parámetro de tipo Carta 
+     * y un segundo parámetro de tipo String. 
+     * El primer parámetro representa la carta que tira un jugador a la mesa y que,
+     * por tanto, se añade a la baza. 
+     * No hace falta comprobar que la carta añadida sea o no null, 
+     * se supone que es una carta. 
+     * El segundo parámetro indica el nombre del jugador que tiro la carta.
+     * El método no devuelve nada.
+     */
+    public void addCarta(Carta cartaATirar, String nombreJugador)
+    {
+        if(numeroDeBaza < baza.length){
+            baza[numeroDeBaza] = cartaATirar;
+            nombreJugadores[numeroDeBaza] = nombreJugador;
+            numeroDeBaza++;
+        }
+    }
 }
