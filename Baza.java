@@ -98,9 +98,12 @@ public class Baza
             while(index < baza.length){
                 if(cartaQueVaGanandoLaBaza.ganaA(baza[index],paloPinte) == false){
                     cartaQueVaGanandoLaBaza = baza[index];
-                    posicion++;
+                    posicion = index;
+                    index++;
                 }
-                index++;
+                else{
+                    index++;
+                }
             }
         }
         return nombreJugadores[posicion];
