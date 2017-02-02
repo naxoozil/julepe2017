@@ -58,7 +58,28 @@ public class Baza
         return primeraCarta;
     }
     
-    
+    /**
+     * método llamado cartaQueVaGanandoLaBaza sin parámetros
+     * que devuelva un objeto Carta. Este objeto carta es la carta 
+     * que va ganando la baza conforme a las normas del julepe. 
+     * En caso de que la baza este vacía este método devuelve null.
+     */
+    public Carta cartaQueVaGanandoLaBaza()
+    {
+        Carta cartaQueVaGanandoLaBaza = null;
+        int index = 0;
+        if(baza[0] != null){
+            cartaQueVaGanandoLaBaza = baza[index];
+            index++;
+            while(index < baza.length){
+                if(cartaQueVaGanandoLaBaza.ganaA(baza[index],paloPinte) == false){
+                    cartaQueVaGanandoLaBaza = baza[index];
+                }
+                index++;
+            }
+        }
+        return cartaQueVaGanandoLaBaza;
+    }
     
     
 }
