@@ -81,5 +81,29 @@ public class Baza
         return cartaQueVaGanandoLaBaza;
     }
     
+    /**
+     * Tenga un método llamado nombreJugadorQueVaGanandoLaBaza
+     * que no admite parámetros y que devuelve el nombre del jugador 
+     * que va ganando la baza en el momento actual.
+     */
+    public String nombreJugadorQueVaGanandoLaBaza()
+    {
+        Carta cartaQueVaGanandoLaBaza = null;
+        int index = 0;
+        int posicion= 0;
+        if(baza[0] != null){
+            cartaQueVaGanandoLaBaza = baza[index];
+            index++;
+            posicion++;
+            while(index < baza.length){
+                if(cartaQueVaGanandoLaBaza.ganaA(baza[index],paloPinte) == false){
+                    cartaQueVaGanandoLaBaza = baza[index];
+                    posicion++;
+                }
+                index++;
+            }
+        }
+        return nombreJugadores[posicion];
+    }
     
 }
